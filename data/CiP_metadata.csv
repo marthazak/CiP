@@ -1,0 +1,99 @@
+sampleid,label,Pair,Group1,Group2,Include,Infection,Timepoint
+PS22,C1.1,1872,C.tp1,TP-1 week0,1,control,TP-1
+PS24,C2.1,1874,C.tp1,TP-1 week0,1,control,TP-1
+PS21,C3.1,1882,C.tp1,TP-1 week0,1,control,TP-1
+PS23,C4.1,1900,C.tp1,TP-1 week0,1,control,TP-1
+PS25,C5.1,1921,C.tp1,TP-1 week0,1,control,TP-1
+PS38,C1.7,1872,C.tp2,TP-2 week7,1,control,TP-2
+PS40,C2.7,1874,C.tp2,TP-2 week7,1,control,TP-2
+PS37,C3.7,1882,C.tp2,TP-2 week7,1,control,TP-2
+PS39,C4.7,1900,C.tp2,TP-2 week7,1,control,TP-2
+PS41,C5.7,1921,C.tp2,TP-2 week7,1,control,TP-2
+PS73,C1.21,1872,C.tp3,TP-3 week21,1,control,TP-3
+PS75,C2.21,1874,C.tp3,TP-3 week21,1,control,TP-3
+PS72,C3.21,1882,C.tp3,TP-3 week21,1,control,TP-3
+PS74,C4.21,1900,C.tp3,TP-3 week21,1,control,TP-3
+PS76,C5.21,1921,C.tp3,TP-3 week21,1,control,TP-3
+PS15,M1.1,1505,M.tp1,TP-1 week0,1,SyDn,TP-1
+PS11,M2.1,1876,M.tp1,TP-1 week0,1,SyDn,TP-1
+PS14,M3.1,1883,M.tp1,TP-1 week0,1,SyDn,TP-1
+PS13,M4.1,1884,M.tp1,TP-1 week0,1,SyDn,TP-1
+PS12,M5.1,1923,M.tp1,TP-1 week0,1,SyDn,TP-1
+PS31,M1.7,1505,M.tp2,TP-2 week7,1,SyDn,TP-2
+PS27,M2.7,1876,M.tp2,TP-2 week7,1,SyDn,TP-2
+PS30,M3.7,1883,M.tp2,TP-2 week7,1,SyDn,TP-2
+PS29,M4.7,1884,M.tp2,TP-2 week7,1,SyDn,TP-2
+PS28,M5.7,1923,M.tp2,TP-2 week7,1,SyDn,TP-2
+PS67,M1.21,1505,M.tp3,TP-3 week21,1,SyDn,TP-3
+PS63,M2.21,1876,M.tp3,TP-3 week21,1,SyDn,TP-3
+PS66,M3.21,1883,M.tp3,TP-3 week21,1,SyDn,TP-3
+PS65,M4.21,1884,M.tp3,TP-3 week21,1,SyDn,TP-3
+PS64,M5.21,1923,M.tp3,TP-3 week21,1,SyDn,TP-3
+PS16,MD1.1,1875,MD.tp1,TP-1 week0,1,SyDy,TP-1
+PS19,MD2.1,1885,MD.tp1,TP-1 week0,1,SyDy,TP-1
+PS17,MD3.1,1909,MD.tp1,TP-1 week0,1,SyDy,TP-1
+PS20,MD4.1,1911,MD.tp1,TP-1 week0,1,SyDy,TP-1
+PS18,MD5.1,1926,MD.tp1,TP-1 week0,1,SyDy,TP-1
+PS32,MD1.7,1875,MD.tp2,TP-2 week7,1,SyDy,TP-2
+PS35,MD2.7,1885,MD.tp2,TP-2 week7,1,SyDy,TP-2
+PS33,MD3.7,1909,MD.tp2,TP-2 week7,1,SyDy,TP-2
+PS36,MD4.7,1911,MD.tp2,TP-2 week7,1,SyDy,TP-2
+PS34,MD5.7,1926,MD.tp2,TP-2 week7,1,SyDy,TP-2
+PS68,MD1.21,1875,MD.tp3,TP-3 week21,1,SyDy,TP-3
+PS70,MD2.21,1885,MD.tp3,TP-3 week21,1,SyDy,TP-3
+PS69,MD3.21,1909,MD.tp3,TP-3 week21,1,SyDy,TP-3
+PS71,MD4.21,1911,MD.tp3,TP-3 week21,1,SyDy,TP-3
+232,PS2MDontrolw4,1872,MD_TP_week10,TP_week10,0,MDCrust,TP_week10
+234,PS4MDontrolw4,1874,MD_TP_week10,TP_week10,0,MDCrust,TP_week10
+PS1,PS1MDontrolw4,1882,MD_TP_week10,TP_week10,0,MDCrust,TP_week10
+233,PS3MDontrolw4,1900,MD_TP_week10,TP_week10,0,MDCrust,TP_week10
+235,PS5MDontrolw4,1921,MD_TP_week10,TP_week10,0,MDCrust,TP_week10
+PS55,C1.10,1872,MD_TP_week10,TP_week10,0,MDCrust,TP_week10
+PS57,C2.10,1874,MD_TP_week10,TP_week10,0,MDCrust,TP_week10
+PS54,C3.10,1882,MD_TP_week10,TP_week10,0,MDCrust,TP_week10
+PS56,C4.10,1900,MD_TP_week10,TP_week10,0,MDCrust,TP_week10
+PS58,C5.10,1921,MD_TP_week10,TP_week10,0,MDCrust,TP_week10
+238,PS8mite_unwCsehdw10,mite_unwashed,MD_TP_week10,TP_week10,0,MDCrust,TP_week10
+237,PS7mite_wCshedw10,mite_washed,MD_TP_week10,TP_week10,0,MDCrust,TP_week10
+PS95,PS95mite_wCshedwHerniC (23/10/2012),Colony Pig Unwashed,MD_TP_week10,TP_week10,0,MDCrust,TP_week10
+PS91,PS91mite_wCshedw10,Colony Pig Unwashed,MD_TP_week10,TP_week10,0,MDCrust,TP_week10
+PS96,PS96mite_wCshedw21,Colony Pig Unwashed,MD_TP_week10,TP_week10,0,MDCrust,TP_week10
+PS61,PS61mixw41548,mix,MD_TP_week10,TP_week10,0,MDCrust,TP_week10
+236,M3.4,1883,M_TP_week10,TP_week10,0,M_Crust,TP_week10
+PS26,M6.7,2048,M_TP_week10,TP_week10,0,M_Crust,TP_week10
+PS62,M6.21,2048,M_TP_week10,TP_week10,0,M_Crust,TP_week10
+PS45,M2.10,1876,M_TP_week10,TP_week10,0,M_Crust,TP_week10
+PS44,M5.10,1923,M_TP_week10,TP_week10,0,M_Crust,TP_week10
+PS42,M6.10,2048,M_TP_week10,TP_week10,0,M_Crust,TP_week10
+PS46,46M2.MDrustr,1876,M_TP_week10,TP_week10,0,M_Crust,TP_week10
+PS43,43M6.MDrustr,2048,M_TP_week10,TP_week10,0,M_Crust,TP_week10
+PS88,M2.mite,1876,M_TP_week10,TP_week10,0,M_Crust,TP_week10
+PS86,M6.mite,2048,M_TP_week10,TP_week10,0,M_Crust,TP_week10
+2310,PS10SyDy_UNWCSHEDw10,1875,M_TP_week10,TP_week10,0,M_Crust,TP_week10
+239,PS9SyDy_WCSHEDw10,1875,M_TP_week10,TP_week10,0,M_Crust,TP_week10
+PS77,MD1.10,1875,MD_TP_week10,TP_week10,0,MDCrust,TP_week10
+PS51,MD2.10,1885,MD_TP_week10,TP_week10,0,MDCrust,TP_week10
+PS47,MD3.10,1909,MD_TP_week10,TP_week10,0,MDCrust,TP_week10
+PS53,MD4.10,1911,MD_TP_week10,TP_week10,0,MDCrust,TP_week10
+PS49,MD5.10,1926,MD_TP_week10,TP_week10,0,MDCrust,TP_week10
+PS50,50MD2.MDrust.10,1885,MD_TP_week10,TP_week10,0,MDCrust,TP_week10
+PS48,48MD3.MDrustr,1909,MD_TP_week10,TP_week10,0,MDCrust,TP_week10
+PS52,52MD4.MDrustl,1911,MD_TP_week10,TP_week10,0,MDCrust,TP_week10
+PS59,59MD1.MDrustlw13,1875,MD_TP_week10,TP_week10,0,MDCrust,TP_week10
+PS60,60MD1.MDrustw13,1875,MD_TP_week10,TP_week10,0,MDCrust,TP_week10
+PS78,78MD1.MDrustr,1875,MD_TP_week10,TP_week10,0,MDCrust,TP_week10
+PS79,79MD2.MDrustlw16,1885,MD_TP_week10,TP_week10,0,MDCrust,TP_week10
+PS80,80MD2.MDrustrw16,1885,MD_TP_week10,TP_week10,0,MDCrust,TP_week10
+PS90,MD3.mite.10r,1909,M_TP_week10,TP_week10,0,M_Crust,TP_week10
+PS93,MD1.mite.13,1875,M_TP_week10,TP_week10,0,M_Crust,TP_week10
+PS94,MD1.mite,1875,M_TP_week10,TP_week10,0,M_Crust,TP_week10
+PS92,MD2.mite,1885,M_TP_week10,TP_week10,0,M_Crust,TP_week10
+PS87,MD3.mite,1909,M_TP_week10,TP_week10,0,M_Crust,TP_week10
+PS89,MD4.mite,1911,M_TP_week10,TP_week10,0,M_Crust,TP_week10
+PS85,MD5.mite,1926,M_TP_week10,TP_week10,0,M_Crust,TP_week10
+PS82,MD1.mite.16l,1875,M_TP_week10,TP_week10,0,M_Crust,TP_week10
+PS83,MD1.mite.16r,1875,M_TP_week10,TP_week10,0,M_Crust,TP_week10
+PS81,MD2.mite.16l,1885,M_TP_week10,TP_week10,0,M_Crust,TP_week10
+PS84,MD2.mite.16r,1885,M_TP_week10,TP_week10,0,M_Crust,TP_week10
+P1,test1teSyDyt1w0,test1,M_TP_week10,TP_week10,0,teSyDyt1,TP_week10
+P2,test2teSyDyt1w0,test2,M_TP_week10,TP_week10,0,teSyDyt1,TP_week10
