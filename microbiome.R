@@ -91,65 +91,6 @@ ggplot(df.phylum.converted, aes(x="", y=total_counts_percentage, fill=phylum)) +
   theme_void() +
   theme(legend.title=element_blank(), legend.position="bottom", legend.text = element_text(size = 8))
 
-#####################################################
-# extra piechart 
-#######################################################
-#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-#need to install ggpubr to execute this
-#install.packages("ggpubr")
-#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-library(ggpubr)
-phylum.study<- tax_glom(physeq.filtered.study, "phylum")
-df.phylum.study <- psmelt(phylum.study)
-
-df.phylum.converted.SyDN <- df.phylum.study %>% 
-  filter(Infection == "SyDn") %>%
-  filter(Timepoint == "TP-2") %>%
-  group_by(phylum) %>% 
-  summarize(total_counts_per_phylum = sum(Abundance)) %>% 
-  ungroup() %>% 
-  mutate(total_counts_percentage = total_counts_per_phylum / sum(total_counts_per_phylum) * 100) 
-
-df.phylum.converted.c <- df.phylum.study %>% 
-    filter(Infection == "control") %>%
-  filter(Timepoint == "TP-2") %>%
-  group_by(phylum) %>% 
-    summarize(total_counts_per_phylum = sum(Abundance)) %>% 
-    ungroup() %>% 
-    mutate(total_counts_percentage = total_counts_per_phylum / sum(total_counts_per_phylum) * 100)
-  
-df.phylum.converted.SyDy <- df.phylum.study %>% 
-    filter(Infection == "SyDy") %>%
-  filter(Timepoint == "TP-2") %>%
-  group_by(phylum) %>% 
-    summarize(total_counts_per_phylum = sum(Abundance)) %>% 
-    ungroup() %>% 
-    mutate(total_counts_percentage = total_counts_per_phylum / sum(total_counts_per_phylum) * 100)
-  
-  
-pie.c <-ggplot(df.phylum.converted.c, aes(x="", y=total_counts_percentage, fill=phylum)) +
-  geom_bar(stat="identity", width=1, color="white") +
-  coord_polar("y", start=0) +
-  theme_void() +
-  theme(legend.title=element_blank(), legend.position="bottom", legend.text = element_text(size = 8))
-
-pie.SyDN <-ggplot(df.phylum.converted.SyDN, aes(x="", y=total_counts_percentage, fill=phylum)) +
-  geom_bar(stat="identity", width=1, color="white") +
-  coord_polar("y", start=0) +
-  theme_void() +
-  theme(legend.title=element_blank(), legend.position="bottom", legend.text = element_text(size = 8))
-
-pie.SyDy <-ggplot(df.phylum.converted.SyDy, aes(x="", y=total_counts_percentage, fill=phylum)) +
-  geom_bar(stat="identity", width=1, color="white") +
-  coord_polar("y", start=0) +
-  theme_void() +
-  theme(legend.title=element_blank(), legend.position="bottom", legend.text = element_text(size = 8))
-
-ggarrange(pie.c,                                                 
-          ggarrange(pie.SyDN, pie.SyDy, ncol = 2, labels = c("SyDN", "SyDy")), 
-          nrow = 2, 
-          labels = "Control"                                       
-) 
 
 #######################################
 #bubble plot
@@ -261,37 +202,6 @@ summary.df <- summary.df[!is.na(summary.df$pvalue),]
 
 head(summary.df[order(summary.df$fdr),])
 
-################################################################
-#stats: lmer
-#################################################################
-#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-# install.packages("lme4")
-#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-library(lme4)
-genera <- unique(df.genus$genus)
-taxon  <- c()
-pval <- c()
-for (i in genera){
-  df.genus.taxon <- df.genus[df.genus$genus==i,]
-  model.data <-data.frame(
-    pig=factor(df.genus.taxon$Pair),
-    infected=factor(df.genus.taxon$Infection),
-    timepoint=factor(df.genus.taxon$Timepoint),
-    taxon= df.genus.taxon$Abundance)
-  
-
-  if(mean(model.data$taxon) > 0.01 & mean(c(model.data.merge$taxon.x, model.data.merge$taxon.y))){
-    model.tp <- lmer(taxon ~ timepoint + (1 | pig), model.data)
-    model.null <- lmer(taxon ~ ( 1 |  pig), model.data)
-    lmer.pval <-anova(model.tp, model.null)$"Pr(>Chisq)"[2]
-    pval <- c(pval, lmer.pval)
-    taxon <- c(taxon, i)
-  }
-}
-pval.corr <- p.adjust(pval,method="fdr")
-summary.df <- data.frame(pvalue=pval, taxon=taxon, fdr=pval.corr)
-summary.df <- summary.df[!is.na(summary.df$pvalue),]
-head(summary.df[order(summary.df$fdr),],n=15)
 
 
 ##########################################
