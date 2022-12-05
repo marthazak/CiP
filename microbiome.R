@@ -2,8 +2,6 @@
 #load data
 #################################
 
-setwd("//melbngs/Bioinfo/bioinfo-proj-zakrzem/contracts/divpro/scabies")
-
 library (plyr)
 library(ggplot2)
 library(phyloseq)
@@ -201,7 +199,6 @@ summary.df <- data.frame(pvalue=pval, taxon=taxon, fdr=pval.corr)
 summary.df <- summary.df[!is.na(summary.df$pvalue),]
 
 head(summary.df[order(summary.df$fdr),])
-
 
 
 ##########################################
