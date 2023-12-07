@@ -1,13 +1,13 @@
 #################################
 #load data
 #################################
-
+setwd("C:/Users/zakrzem/Documents/private/CiP")
 library (plyr)
 library(ggplot2)
 library(phyloseq)
 library(tidyverse)
 library(ampvis2)
-
+library(ggpubr)
 #import count table
 asv	<-	read.table(file	=  "CiP_count_filtered.tsv",	header	=	TRUE, row.names=1)
 head(asv)
@@ -79,7 +79,7 @@ df.phylum.converted <- df.phylum %>%
 
 df.phylum.converted <- df.phylum %>% 
   group_by(phylum) %>% 
-  summarize(total_counts_per_phylum = sum(Abundance)) %>% 
+  dplyr::summarize(total_counts_per_phylum = sum(Abundance)) %>% 
   ungroup() %>% 
   mutate(total_counts_percentage = total_counts_per_phylum / sum(total_counts_per_phylum) * 100)
 
@@ -97,7 +97,7 @@ genus<- tax_glom(relAb.meanFilt.SyDN, "genus")
 df.genus <- psmelt(genus)
 taxa_sel <- df.genus %>% 
   group_by(genus) %>% 
-  summarize(mean = mean(Abundance))%>% arrange(-mean) %>% 
+  dplyr::summarize(mean = mean(Abundance))%>% arrange(-mean) %>% 
   pull(genus) %>% 
   head(n=15)
 df.genus.top <- df.genus[ df.genus$genus %in% taxa_sel, ] 
@@ -176,18 +176,18 @@ pval <- c()
 for (i in genera){
   df.genus.taxon <- df.genus[df.genus$genus==i,]
   model.data <-data.frame(
-      pig=factor(df.genus.taxon$Pair),
-      infected=factor(df.genus.taxon$Infection),
-      timepoint=factor(df.genus.taxon$Timepoint),
-      taxon= df.genus.taxon$Abundance)
+    pig=factor(df.genus.taxon$Pair),
+    infected=factor(df.genus.taxon$Infection),
+    timepoint=factor(df.genus.taxon$Timepoint),
+    taxon= df.genus.taxon$Abundance)
   
   model.data
   model.data.split <-split(model.data, model.data$timepoint)
-
+  
   model.data.merge <- merge(model.data.split$`TP-1`,model.data.split$`TP-2`,by="pig")
   model.data.merge
   
-
+  
   if(median(model.data$taxon) > 0.01 & mean(c(model.data.merge$taxon.x, model.data.merge$taxon.y))){
     ttest.results <- t.test(model.data.merge$taxon.x,model.data.merge$taxon.y, paired = TRUE)
     pval <- c(pval, ttest.results$p.value)
@@ -257,5 +257,4 @@ model.data <-data.frame(
   pig=factor(sample_data(physeq.rarefy.study)$Pair),
   it=factor(paste0(sample_data(physeq.rarefy.study)$Infection,"_",sample_data(physeq.rarefy.study)$Timepoint)))
 ggplot(model.data, aes(x=timepoint, y=diversity)) +   geom_boxplot() +  facet_wrap(~ infected)
-
 
